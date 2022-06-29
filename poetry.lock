@@ -605,7 +605,7 @@ jupyter = ["ipywidgets (>=7.5.1,<8.0.0)"]
 
 [[package]]
 name = "schemathesis"
-version = "1.1.0"
+version = "1.2.0"
 description = "Hypothesis strategies for Open API / Swagger schemas"
 category = "main"
 optional = false
@@ -759,7 +759,7 @@ sync = ["requests"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "003a368a247bda3817b85561c679e908e9267dedd52ed45ee443214bad6a981a"
+content-hash = "ee22881485db0255290dfce2ec1ba4998b49082ac6b214d1a97b472de318e49b"
 
 [metadata.files]
 aiohttp = [
@@ -1218,8 +1218,8 @@ rich = [
     {file = "rich-12.4.1.tar.gz", hash = "sha256:d239001c0fb7de985e21ec9a4bb542b5150350330bbc1849f835b9cbc8923b91"},
 ]
 schemathesis = [
-    {file = "schemathesis-1.1.0-py3-none-any.whl", hash = "sha256:c9eeffec7ee29bef4d84d90ce5baa8de87d85841ec41f9a50ed442ca20b9b3ec"},
-    {file = "schemathesis-1.1.0.tar.gz", hash = "sha256:3d22695a0d7fbe995961ef0e9f3efb2c30281b8fe57e07694f37bc03d2c1aaf4"},
+    {file = "schemathesis-1.2.0-py3-none-any.whl", hash = "sha256:cb0e70048e132b2c4bcf3660f740e31795cb580e67b10f1432684cca6420e9e5"},
+    {file = "schemathesis-1.2.0.tar.gz", hash = "sha256:19afa68458366c826f0af2e8b0ea5ad8f27b267e658fe20a2495ec5b2867b7d8"},
 ]
 six = [
     {file = "six-1.15.0-py2.py3-none-any.whl", hash = "sha256:8b74bedcbbbaca38ff6d7491d76f2b06b3592611af620f8426e82dddb04a5ced"},
