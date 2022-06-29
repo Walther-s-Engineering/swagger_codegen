@@ -1,6 +1,8 @@
 ## Swagger codegen for Python
 ![Continuous Integration](https://github.com/asyncee/swagger_codegen/workflows/Continuous%20Integration/badge.svg)
 
+### ⚠️ Updated dependency "**rich**" to version *12.4.1*
+
 ### Installation
 
 ```bash
@@ -13,7 +15,7 @@ Currently, only OpenApi 3.x (aka Swagger 3) is supported.
 
 ### Usage example
 
-```
+```python
 # Generate Petstore Api client using 'petstore' package name.
 swagger_codegen generate https://petstore3.swagger.io/api/v3/openapi.json petstore
 
