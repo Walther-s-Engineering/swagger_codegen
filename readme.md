@@ -1,7 +1,9 @@
 ## Swagger codegen for Python
 ![Continuous Integration](https://github.com/asyncee/swagger_codegen/workflows/Continuous%20Integration/badge.svg)
 
-### ⚠️ Updated dependency "**rich**" to version *12.4.1*
+### ⚠️ Updated dependencies
+- "**rich**" to version *12.4.1*
+- "**schemathesis**" to version *2.8.0*
 
 ### Installation
 
