@@ -171,6 +171,14 @@ pycodestyle = ">=2.6.0a1,<2.7.0"
 pyflakes = ">=2.2.0,<2.3.0"
 
 [[package]]
+name = "graphql-core"
+version = "3.2.1"
+description = "GraphQL implementation for Python, a port of GraphQL.js, the JavaScript reference implementation for GraphQL."
+category = "main"
+optional = false
+python-versions = ">=3.6,<4"
+
+[[package]]
 name = "h11"
 version = "0.12.0"
 description = "A pure-Python, bring-your-own-I/O implementation of HTTP/1.1"
@@ -238,6 +246,18 @@ pytest = ["pytest (>=4.3)"]
 pytz = ["pytz (>=2014.1)"]
 redis = ["redis (>=3.0.0)"]
 zoneinfo = ["importlib-resources (>=3.3.0)", "backports.zoneinfo (>=0.2.1)", "tzdata (>=2020.4)"]
+
+[[package]]
+name = "hypothesis-graphql"
+version = "0.4.2"
+description = "Hypothesis strategies for GraphQL schemas and queries"
+category = "main"
+optional = false
+python-versions = ">=3.6,<4.0"
+
+[package.dependencies]
+graphql-core = ">=3.1.0,<4.0.0"
+hypothesis = ">5.8.0"
 
 [[package]]
 name = "hypothesis-jsonschema"
@@ -318,6 +338,17 @@ six = ">=1.11.0"
 [package.extras]
 format = ["idna", "jsonpointer (>1.13)", "rfc3987", "strict-rfc3339", "webcolors"]
 format_nongpl = ["idna", "jsonpointer (>1.13)", "webcolors", "rfc3986-validator (>0.1.0)", "rfc3339-validator"]
+
+[[package]]
+name = "junit-xml"
+version = "1.9"
+description = "Creates JUnit XML test result documents that can be read by tools such as Jenkins"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+six = "*"
 
 [[package]]
 name = "markupsafe"
@@ -605,8 +636,8 @@ jupyter = ["ipywidgets (>=7.5.1,<8.0.0)"]
 
 [[package]]
 name = "schemathesis"
-version = "1.2.0"
-description = "Hypothesis strategies for Open API / Swagger schemas"
+version = "2.1.0"
+description = "Hypothesis strategies for Open API / Swagger and GraphQL schemas"
 category = "main"
 optional = false
 python-versions = ">=3.6,<4.0"
@@ -614,13 +645,16 @@ python-versions = ">=3.6,<4.0"
 [package.dependencies]
 attrs = ">=19.1,<20.0"
 click = ">=7.0,<8.0"
-hypothesis = ">=4.32,<6.0"
-hypothesis_jsonschema = ">=0.9.13,<1.0"
+hypothesis = ">=5.15,<6.0"
+hypothesis_graphql = ">=0.3"
+hypothesis_jsonschema = ">=0.16.0,<1.0"
 jsonschema = ">=3.0.0,<4.0.0"
+junit-xml = ">=1.9,<2.0"
 pytest = ">4.6.4"
-pytest-subtests = ">=0.2.1,<0.3.0"
+pytest-subtests = ">=0.2.1,<1.0"
 pyyaml = ">=5.1,<6.0"
 requests = ">=2.22,<3.0"
+starlette = ">=0.13.2,<0.14.0"
 werkzeug = ">0.16.0"
 
 [[package]]
@@ -651,7 +685,7 @@ python-versions = "*"
 name = "starlette"
 version = "0.13.6"
 description = "The little ASGI library that shines."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6"
 
@@ -759,7 +793,7 @@ sync = ["requests"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "ee22881485db0255290dfce2ec1ba4998b49082ac6b214d1a97b472de318e49b"
+content-hash = "f0b6fd6cad012affb67629a618a700517dd55e2177bdf3d7033d42ef75c77223"
 
 [metadata.files]
 aiohttp = [
@@ -903,6 +937,10 @@ flake8 = [
     {file = "flake8-3.8.4-py2.py3-none-any.whl", hash = "sha256:749dbbd6bfd0cf1318af27bf97a14e28e5ff548ef8e5b1566ccfb25a11e7c839"},
     {file = "flake8-3.8.4.tar.gz", hash = "sha256:aadae8761ec651813c24be05c6f7b4680857ef6afaae4651a4eccaef97ce6c3b"},
 ]
+graphql-core = [
+    {file = "graphql-core-3.2.1.tar.gz", hash = "sha256:9d1bf141427b7d54be944587c8349df791ce60ade2e3cccaf9c56368c133c201"},
+    {file = "graphql_core-3.2.1-py3-none-any.whl", hash = "sha256:f83c658e4968998eed1923a2e3e3eddd347e005ac0315fbb7ca4d70ea9156323"},
+]
 h11 = [
     {file = "h11-0.12.0-py3-none-any.whl", hash = "sha256:36a3cb8c0a032f56e2da7084577878a035d3b61d104230d4bd49c0c6b555a9c6"},
     {file = "h11-0.12.0.tar.gz", hash = "sha256:47222cb6067e4a307d535814917cd98fd0a57b6788ce715755fa2b6c28b56042"},
@@ -918,6 +956,10 @@ httpx = [
 hypothesis = [
     {file = "hypothesis-5.47.0-py3-none-any.whl", hash = "sha256:c343282d67ee0efe5bdc2181e642941ffaf3a3c720d95b11c3e8c0a11d60325e"},
     {file = "hypothesis-5.47.0.tar.gz", hash = "sha256:37990720e2894f99aee6ee870805190b772fa7d88478a3388aa100dece7dbeb1"},
+]
+hypothesis-graphql = [
+    {file = "hypothesis-graphql-0.4.2.tar.gz", hash = "sha256:cafb5e9219282e268bdec30fa077b3a4a33cc10d3fbdaec2c4fa1abf3ab18307"},
+    {file = "hypothesis_graphql-0.4.2-py3-none-any.whl", hash = "sha256:8ff44729e586a4f03d3b18f9d912955fced7d297624529bd6db8639d36f3e3a6"},
 ]
 hypothesis-jsonschema = [
     {file = "hypothesis-jsonschema-0.19.0.tar.gz", hash = "sha256:6b9daef08eb8d097d54fd69e37166ef0eebe63a88290162e82a97c2e571f9249"},
@@ -946,6 +988,9 @@ jinja2 = [
 jsonschema = [
     {file = "jsonschema-3.2.0-py2.py3-none-any.whl", hash = "sha256:4e5b3cf8216f577bee9ce139cbe72eca3ea4f292ec60928ff24758ce626cd163"},
     {file = "jsonschema-3.2.0.tar.gz", hash = "sha256:c8a85b28d377cc7737e46e2d9f2b4f44ee3c0e1deac6bf46ddefc7187d30797a"},
+]
+junit-xml = [
+    {file = "junit_xml-1.9-py2.py3-none-any.whl", hash = "sha256:ec5ca1a55aefdd76d28fcc0b135251d156c7106fa979686a4b48d62b761b4732"},
 ]
 markupsafe = [
     {file = "MarkupSafe-1.1.1-cp27-cp27m-macosx_10_6_intel.whl", hash = "sha256:09027a7803a62ca78792ad89403b1b7a73a01c8cb65909cd876f7fcebd79b161"},
@@ -1218,8 +1263,8 @@ rich = [
     {file = "rich-12.4.1.tar.gz", hash = "sha256:d239001c0fb7de985e21ec9a4bb542b5150350330bbc1849f835b9cbc8923b91"},
 ]
 schemathesis = [
-    {file = "schemathesis-1.2.0-py3-none-any.whl", hash = "sha256:cb0e70048e132b2c4bcf3660f740e31795cb580e67b10f1432684cca6420e9e5"},
-    {file = "schemathesis-1.2.0.tar.gz", hash = "sha256:19afa68458366c826f0af2e8b0ea5ad8f27b267e658fe20a2495ec5b2867b7d8"},
+    {file = "schemathesis-2.1.0-py3-none-any.whl", hash = "sha256:a80a86863249dde6fe437dea1ccba0892a9fc29814dc738f32af609bce1fa33f"},
+    {file = "schemathesis-2.1.0.tar.gz", hash = "sha256:1765541dc472e0d348b9b258075e40d63e9ffaf53ee2da6a533dbd65b01e0621"},
 ]
 six = [
     {file = "six-1.15.0-py2.py3-none-any.whl", hash = "sha256:8b74bedcbbbaca38ff6d7491d76f2b06b3592611af620f8426e82dddb04a5ced"},
