@@ -140,6 +140,17 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, <4"
 toml = ["toml"]
 
 [[package]]
+name = "curlify"
+version = "2.2.1"
+description = "Library to convert python requests object to curl command."
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+requests = "*"
+
+[[package]]
 name = "fastapi"
 version = "0.63.0"
 description = "FastAPI framework, high performance, easy to learn, fast to code, ready for production"
@@ -636,18 +647,19 @@ jupyter = ["ipywidgets (>=7.5.1,<8.0.0)"]
 
 [[package]]
 name = "schemathesis"
-version = "2.1.0"
-description = "Hypothesis strategies for Open API / Swagger and GraphQL schemas"
+version = "2.8.0"
+description = "Property-based testing framework for Open API and GraphQL based apps"
 category = "main"
 optional = false
 python-versions = ">=3.6,<4.0"
 
 [package.dependencies]
-attrs = ">=19.1,<20.0"
+attrs = ">=19.2"
 click = ">=7.0,<8.0"
+curlify = ">=2.2.1,<3.0.0"
 hypothesis = ">=5.15,<6.0"
 hypothesis_graphql = ">=0.3"
-hypothesis_jsonschema = ">=0.16.0,<1.0"
+hypothesis_jsonschema = ">=0.17.0,<1.0"
 jsonschema = ">=3.0.0,<4.0.0"
 junit-xml = ">=1.9,<2.0"
 pytest = ">4.6.4"
@@ -656,6 +668,7 @@ pyyaml = ">=5.1,<6.0"
 requests = ">=2.22,<3.0"
 starlette = ">=0.13.2,<0.14.0"
 werkzeug = ">0.16.0"
+yarl = ">=1.5,<2.0"
 
 [[package]]
 name = "six"
@@ -793,7 +806,7 @@ sync = ["requests"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "f0b6fd6cad012affb67629a618a700517dd55e2177bdf3d7033d42ef75c77223"
+content-hash = "4a77f23b505569bc695bbf3395905578afcd214d085d52cc1f8bf73bb22e092a"
 
 [metadata.files]
 aiohttp = [
@@ -928,6 +941,9 @@ coverage = [
     {file = "coverage-5.3.1-pp36-none-any.whl", hash = "sha256:723d22d324e7997a651478e9c5a3120a0ecbc9a7e94071f7e1954562a8806cf3"},
     {file = "coverage-5.3.1-pp37-none-any.whl", hash = "sha256:c89b558f8a9a5a6f2cfc923c304d49f0ce629c3bd85cb442ca258ec20366394c"},
     {file = "coverage-5.3.1.tar.gz", hash = "sha256:38f16b1317b8dd82df67ed5daa5f5e7c959e46579840d77a67a4ceb9cef0a50b"},
+]
+curlify = [
+    {file = "curlify-2.2.1.tar.gz", hash = "sha256:0d3f02e7235faf952de8ef45ef469845196d30632d5838bcd5aee217726ddd6d"},
 ]
 fastapi = [
     {file = "fastapi-0.63.0-py3-none-any.whl", hash = "sha256:98d8ea9591d8512fdadf255d2a8fa56515cdd8624dca4af369da73727409508e"},
@@ -1263,8 +1279,8 @@ rich = [
     {file = "rich-12.4.1.tar.gz", hash = "sha256:d239001c0fb7de985e21ec9a4bb542b5150350330bbc1849f835b9cbc8923b91"},
 ]
 schemathesis = [
-    {file = "schemathesis-2.1.0-py3-none-any.whl", hash = "sha256:a80a86863249dde6fe437dea1ccba0892a9fc29814dc738f32af609bce1fa33f"},
-    {file = "schemathesis-2.1.0.tar.gz", hash = "sha256:1765541dc472e0d348b9b258075e40d63e9ffaf53ee2da6a533dbd65b01e0621"},
+    {file = "schemathesis-2.8.0-py3-none-any.whl", hash = "sha256:d792ce1abdefa09bbfce3ec55167ab1aec34c6d19d1ed9b72cc0e22ae364315d"},
+    {file = "schemathesis-2.8.0.tar.gz", hash = "sha256:7d4044bd580d573d27114c747e8922f4c858ceffcb7a6358a8619c038098b930"},
 ]
 six = [
     {file = "six-1.15.0-py2.py3-none-any.whl", hash = "sha256:8b74bedcbbbaca38ff6d7491d76f2b06b3592611af620f8426e82dddb04a5ced"},
